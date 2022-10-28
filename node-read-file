@@ -1,2 +1,16 @@
 // Reading the file Asynchronously 
 const fs = require('fs');
+
+fs.readFile('message.txt', (err, data) => {
+    if(err)
+    throw err;
+    console.log('Content: ' + data);
+});
+
+// Reading the file Synchronously 
+const fs = require('fs');
+
+const filename = 'content.txt'; //name of the file to be readFile
+const content = fs.readFileSync(filename);
+
+console.log('Content: ' + content);
